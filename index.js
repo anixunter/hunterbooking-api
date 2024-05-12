@@ -9,6 +9,8 @@ import usersRoute from "./routes/users.js";
 import hotelsRoute from "./routes/hotels.js";
 import roomsRoute from "./routes/rooms.js";
 
+const port = process.env.PORT || 3000;
+
 const app = express();
 
 const MONGODB_URL = process.env.MONGODB_URL;
@@ -51,7 +53,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
   connectMongodb();
-  console.log("api is running");
+  console.log("hunterbooking-api is running on render");
 });
